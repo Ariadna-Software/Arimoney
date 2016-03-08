@@ -1,0 +1,6 @@
+Línea 15: la clase MSComctlLib.ImageList del control ImgListviews no era una clase de control cargada.
+Línea 41: la clase MSComctlLib.ImageList del control imgIcoForms no era una clase de control cargada.
+Línea 74: la clase MSComctlLib.Toolbar del control Toolbar11 no era una clase de control cargada.
+Línea 155: la clase MSComctlLib.ImageList del control imgListComun no era una clase de control cargada.
+Línea 164: la clase MSComctlLib.ImageList del control ImageList11 no era una clase de control cargada.
+Línea 173: la clase MSComctlLib.StatusBar del control StatusBar1 no era una clase de control cargada.

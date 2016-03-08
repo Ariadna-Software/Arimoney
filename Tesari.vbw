@@ -1,0 +1,16 @@
+Configuracion = 0, 0, 0, 0, C
+CTag = 66, 66, 549, 386, C
+Usuario = 44, 44, 527, 364, C
+bus = 88, 88, 572, 408, Z
+Errores = 0, 0, 0, 0, C
+ModCarpeta = 0, 0, 0, 0, C
+ModFunciones = 110, 110, 594, 430, C
+ValoresxDefecto = 0, 0, 0, 0, C
+frmIdentifica = 0, 0, 484, 320, C, 22, 22, 506, 342, C
+frmLogin = 74, 120, 558, 440, C, 0, 0, 0, 0, C
+frmPpal = 110, 110, 594, 430, , 21, 13, 505, 333, C
+pcname = 0, 0, 0, 0, C
+Cparametros = 0, 0, 0, 0, C
+Cempresa = 0, 0, 0, 0, C
+frmLLave = 0, 0, 0, 0, C, 44, 44, 528, 364, C
+libAriMoney = 88, 88, 469, 408, 

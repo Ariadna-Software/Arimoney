@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.008.001.02">
+<CstmrDrctDbtInitn>
+<GrpHdr>
+<MsgId>PRE2016030116135766800RE10000742015</MsgId>
+   <CreDtTm>2016-03-01T16:13:57</CreDtTm>
+   <NbOfTxs>5</NbOfTxs>
+   <CtrlSum>39.30</CtrlSum>
+   <InitgPty>
+     <Nm>Herbelca S.L.</Nm>
+     <Id>
+        <OrgId>
+           <Othr>
+              <Id>ES25000B46135372</Id>
+           </Othr>
+        </OrgId>
+      </Id>
+   </InitgPty>
+</GrpHdr>
+<PmtInf>
+   <PmtInfId>RE000742015 01/03/16B46135372</PmtInfId>
+   <PmtMtd>DD</PmtMtd>
+   <BtchBookg>false</BtchBookg>
+   <PmtTpInf>
+      <SvcLvl>
+          <Cd>SEPA</Cd>
+      </SvcLvl>
+      <LclInstrm>
+         <Cd>COR1</Cd>
+      </LclInstrm>
+      <SeqTp>RCUR</SeqTp>
+      <CtgyPurp>
+         <Cd>TRAD</Cd>
+      </CtgyPurp>
+   </PmtTpInf>
+   <ReqdColltnDt>2016-03-01</ReqdColltnDt>
+   <Cdtr>
+      <Nm>Herbelca S.L.</Nm>
+      <PstlAdr>
+          <Ctry>ES</Ctry>
+          <AdrLine>SAN ANTONIO, 5-B</AdrLine>
+      </PstlAdr>
+   </Cdtr>
+   <CdtrAcct>
+      <Id>
+         <IBAN>ES1830582122582720601696</IBAN>
+      </Id>
+   </CdtrAcct>
+   <CdtrAgt>
+      <FinInstnId>
+         <BIC>CCRIES2AXXX</BIC>
+      </FinInstnId>
+   </CdtrAgt>
+   <CdtrSchmeId>
+       <Id>
+          <PrvtId>
+             <Othr>
+                 <Id>ES25000B46135372</Id>
+                 <SchmeNm><Prtry>SEPA</Prtry></SchmeNm>
+             </Othr>
+          </PrvtId>
+       </Id>
+   </CdtrSchmeId>
+   <DrctDbtTxInf>
+      <PmtId>
+          <EndToEndId>43000692  A  0550107220150215001   </EndToEndId>
+      </PmtId>
+      <InstdAmt Ccy="EUR">7.64</InstdAmt>
+      <DrctDbtTx>
+         <MndtRltdInf>
+            <MndtId>73916225K</MndtId>
+            <DtOfSgntr>2009-10-31</DtOfSgntr>
+         </MndtRltdInf>
+      </DrctDbtTx>
+      <DbtrAgt>
+         <FinInstnId>
+            <BIC>CAHMESMMXXX</BIC>
+         </FinInstnId>
+      </DbtrAgt>
+      <Dbtr>
+         <Nm>FELIX CAMACHO DIAZ</Nm>
+         <PstlAdr>
+            <Ctry>ES</Ctry>
+              <AdrLine>SAN ANTONIO, 5-B</AdrLine>
+              <AdrLine>TAVERNES DE VALLDIGNA   46760     VALENCIA</AdrLine>
+         </PstlAdr>
+         <Id>
+            <PrvtId>
+               <Othr>
+                   <Id>73916225K</Id>
+                   <Issr>NIF</Issr>
+               </Othr>
+            </PrvtId>
+         </Id>
+      </Dbtr>
+      <DbtrAcct>
+         <Id>
+            <IBAN>    20770121031102464257</IBAN>
+         </Id>
+      </DbtrAcct>
+      <Purp>
+         <Cd>TRAD</Cd>
+      </Purp>
+      <RmtInf>
+         <Ustrd>FACTURA  A-5501072 de Fecha 15 feb 2015 Importe anterior vto  15,21</Ustrd>
+      </RmtInf>
+   </DrctDbtTxInf>
+   <DrctDbtTxInf>
+      <PmtId>
+          <EndToEndId>43000455  A  0550106120150215001   </EndToEndId>
+      </PmtId>
+      <InstdAmt Ccy="EUR">13.27</InstdAmt>
+      <DrctDbtTx>
+         <MndtRltdInf>
+            <MndtId>B96685888</MndtId>
+            <DtOfSgntr>2009-10-31</DtOfSgntr>
+         </MndtRltdInf>
+      </DrctDbtTx>
+      <DbtrAgt>
+         <FinInstnId>
+            <BIC>CAHMESMMXXX</BIC>
+         </FinInstnId>
+      </DbtrAgt>
+      <Dbtr>
+         <Nm>SUMINISTROS SERRERIA, S.L.</Nm>
+         <PstlAdr>
+            <Ctry>ES</Ctry>
+              <AdrLine>SERRERIA, 69 BAJO</AdrLine>
+              <AdrLine>46022   VALENCIA</AdrLine>
+         </PstlAdr>
+         <Id>
+            <PrvtId>
+               <Othr>
+                   <Id>B96685888</Id>
+                   <Issr>NIF</Issr>
+               </Othr>
+            </PrvtId>
+         </Id>
+      </Dbtr>
+      <DbtrAcct>
+         <Id>
+            <IBAN>ES8020386156536000000646</IBAN>
+         </Id>
+      </DbtrAcct>
+      <Purp>
+         <Cd>TRAD</Cd>
+      </Purp>
+      <RmtInf>
+         <Ustrd>FACTURA  A-5501061 de Fecha 15 feb 2015</Ustrd>
+      </RmtInf>
+   </DrctDbtTxInf>
+   <DrctDbtTxInf>
+      <PmtId>
+          <EndToEndId>43000414  A  0550106020150215001   </EndToEndId>
+      </PmtId>
+      <InstdAmt Ccy="EUR">4.65</InstdAmt>
+      <DrctDbtTx>
+         <MndtRltdInf>
+            <MndtId>B97628176</MndtId>
+            <DtOfSgntr>2009-10-31</DtOfSgntr>
+         </MndtRltdInf>
+      </DrctDbtTx>
+      <DbtrAgt>
+         <FinInstnId>
+            <BIC>           </BIC>
+         </FinInstnId>
+      </DbtrAgt>
+      <Dbtr>
+         <Nm>ROCA RESTAURA CRG, S.L.</Nm>
+         <PstlAdr>
+            <Ctry>ES</Ctry>
+              <AdrLine>CARRETERA L ALT E R,   29 BAJO</AdrLine>
+              <AdrLine>46026   VALENCIA</AdrLine>
+         </PstlAdr>
+         <Id>
+            <PrvtId>
+               <Othr>
+                   <Id>B97628176</Id>
+                   <Issr>NIF</Issr>
+               </Othr>
+            </PrvtId>
+         </Id>
+      </Dbtr>
+      <DbtrAcct>
+         <Id>
+            <IBAN>ES2280810395470001150324</IBAN>
+         </Id>
+      </DbtrAcct>
+      <Purp>
+         <Cd>TRAD</Cd>
+      </Purp>
+      <RmtInf>
+         <Ustrd>FACTURA  A-5501060 de Fecha 15 feb 2015</Ustrd>
+      </RmtInf>
+   </DrctDbtTxInf>
+   <DrctDbtTxInf>
+      <PmtId>
+          <EndToEndId>43000830  A  0550107720150215001   </EndToEndId>
+      </PmtId>
+      <InstdAmt Ccy="EUR">5.87</InstdAmt>
+      <DrctDbtTx>
+         <MndtRltdInf>
+            <MndtId>B98557739</MndtId>
+            <DtOfSgntr>2009-10-31</DtOfSgntr>
+         </MndtRltdInf>
+      </DrctDbtTx>
+      <DbtrAgt>
+         <FinInstnId>
+            <BIC>BSABESBBXXX</BIC>
+         </FinInstnId>
+      </DbtrAgt>
+      <Dbtr>
+         <Nm>SUMINISTROS GUIFONT, S.L.</Nm>
+         <PstlAdr>
+            <Ctry>ES</Ctry>
+              <AdrLine>AVDA. EMILIO BARO, 62 BAJO</AdrLine>
+              <AdrLine>46020   VALENCIA</AdrLine>
+         </PstlAdr>
+         <Id>
+            <PrvtId>
+               <Othr>
+                   <Id>B98557739</Id>
+                   <Issr>NIF</Issr>
+               </Othr>
+            </PrvtId>
+         </Id>
+      </Dbtr>
+      <DbtrAcct>
+         <Id>
+            <IBAN>ES8900811326130001198422</IBAN>
+         </Id>
+      </DbtrAcct>
+      <Purp>
+         <Cd>TRAD</Cd>
+      </Purp>
+      <RmtInf>
+         <Ustrd>FACTURA  A-5501077 de Fecha 15 feb 2015</Ustrd>
+      </RmtInf>
+   </DrctDbtTxInf>
+   <DrctDbtTxInf>
+      <PmtId>
+          <EndToEndId>43001093  A  0550109820150215001   </EndToEndId>
+      </PmtId>
+      <InstdAmt Ccy="EUR">7.87</InstdAmt>
+      <DrctDbtTx>
+         <MndtRltdInf>
+            <MndtId>B98604184</MndtId>
+            <DtOfSgntr>2009-10-31</DtOfSgntr>
+         </MndtRltdInf>
+      </DrctDbtTx>
+      <DbtrAgt>
+         <FinInstnId>
+            <BIC>BASKES2BXXX</BIC>
+         </FinInstnId>
+      </DbtrAgt>
+      <Dbtr>
+         <Nm>DISE OS Y PROYECTOS DEL MEDITERRANEO SLU</Nm>
+         <PstlAdr>
+            <Ctry>ES</Ctry>
+              <AdrLine>C/ ALCACER 30 B</AdrLine>
+              <AdrLine>46014   VALENCIA</AdrLine>
+         </PstlAdr>
+         <Id>
+            <PrvtId>
+               <Othr>
+                   <Id>B98604184</Id>
+                   <Issr>NIF</Issr>
+               </Othr>
+            </PrvtId>
+         </Id>
+      </Dbtr>
+      <DbtrAcct>
+         <Id>
+            <IBAN>ES3120950449109113500724</IBAN>
+         </Id>
+      </DbtrAcct>
+      <Purp>
+         <Cd>TRAD</Cd>
+      </Purp>
+      <RmtInf>
+         <Ustrd>FACTURA  A-5501098 de Fecha 15 feb 2015</Ustrd>
+      </RmtInf>
+   </DrctDbtTxInf>
+</PmtInf>
+</CstmrDrctDbtInitn></Document>
