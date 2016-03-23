@@ -2,8 +2,8 @@
 <Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.008.001.02">
 <CstmrDrctDbtInitn>
 <GrpHdr>
-<MsgId>PRE2016030116135766800RE10000742015</MsgId>
-   <CreDtTm>2016-03-01T16:13:57</CreDtTm>
+<MsgId>PRE2016032310261918360RE10000742015</MsgId>
+   <CreDtTm>2016-03-23T10:26:19</CreDtTm>
    <NbOfTxs>5</NbOfTxs>
    <CtrlSum>39.30</CtrlSum>
    <InitgPty>
@@ -18,7 +18,7 @@
    </InitgPty>
 </GrpHdr>
 <PmtInf>
-   <PmtInfId>RE000742015 01/03/16B46135372</PmtInfId>
+   <PmtInfId>RE000742015 23/03/16B46135372</PmtInfId>
    <PmtMtd>DD</PmtMtd>
    <BtchBookg>false</BtchBookg>
    <PmtTpInf>
@@ -33,7 +33,7 @@
          <Cd>TRAD</Cd>
       </CtgyPurp>
    </PmtTpInf>
-   <ReqdColltnDt>2016-03-01</ReqdColltnDt>
+   <ReqdColltnDt>2016-03-23</ReqdColltnDt>
    <Cdtr>
       <Nm>Herbelca S.L.</Nm>
       <PstlAdr>

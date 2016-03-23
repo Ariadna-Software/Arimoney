@@ -315,7 +315,8 @@ Public Function GrabarDisketteNorma19_SEPA_XML(NomFichero As String, Remesa_ As 
                 
                 ImpEfe = DBLet(miRsAux!Gastos, "N")
                 ImpEfe = miRsAux!impvenci + ImpEfe
-                Print #NFic, "      <InstdAmt Ccy=""EUR"">" & TransformaComasPuntos(CStr(ImpEfe)) & "</InstdAmt>"
+                SQL = TransformaComasPuntos(Format(ImpEfe, "####0.00"))
+                Print #NFic, "      <InstdAmt Ccy=""EUR"">" & SQL & "</InstdAmt>"
                 Print #NFic, "      <DrctDbtTx>"
                 Print #NFic, "         <MndtRltdInf>"
                 
@@ -713,7 +714,8 @@ Dim EsPersonaJuridica2 As Boolean
         Print #NFic, "          <CtgyPurp><Cd>" & AUX & "</Cd></CtgyPurp>"
         Print #NFic, "       </PmtTpInf>"
         Print #NFic, "       <Amt>"
-        Print #NFic, "          <InstdAmt Ccy=""EUR"">" & TransformaComasPuntos(CStr(Im)) & "</InstdAmt>"
+        Cad = Format(Im, "#.00")
+        Print #NFic, "          <InstdAmt Ccy=""EUR"">" & TransformaComasPuntos(Cad) & "</InstdAmt>"
         Print #NFic, "       </Amt>"
         Print #NFic, "       <CdtrAgt>"
         Print #NFic, "          <FinInstnId>"

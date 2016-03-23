@@ -2,8 +2,8 @@
 <Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
 <CstmrCdtTrfInitn>
    <GrpHdr>
-      <MsgId>TRANPAG000002F20160203T133251</MsgId>
-      <CreDtTm>2016-02-03T13:32:51</CreDtTm>
+      <MsgId>TRANPAG000002F20160323T102709</MsgId>
+      <CreDtTm>2016-03-23T10:27:09</CreDtTm>
       <NbOfTxs>4</NbOfTxs>
       <CtrlSum>1818.73</CtrlSum>
       <InitgPty>
@@ -18,7 +18,7 @@
       </InitgPty>
    </GrpHdr>
    <PmtInf>
-      <PmtInfId>20160203133304B46135372</PmtInfId>
+      <PmtInfId>20160323102843B46135372</PmtInfId>
       <PmtMtd>TRF</PmtMtd>
       <ReqdExctnDt>2015-09-15</ReqdExctnDt>
       <Dbtr>
@@ -52,10 +52,10 @@
       </PmtId>
       <PmtTpInf>
           <SvcLvl><Cd>SEPA</Cd></SvcLvl>
-          <CtgyPurp><Cd>SALA</Cd></CtgyPurp>
+          <CtgyPurp><Cd>PENS</Cd></CtgyPurp>
        </PmtTpInf>
        <Amt>
-          <InstdAmt Ccy="EUR">145.2</InstdAmt>
+          <InstdAmt Ccy="EUR">145.20</InstdAmt>
        </Amt>
        <CdtrAgt>
           <FinInstnId>
@@ -78,7 +78,7 @@
            </Id>
         </CdtrAcct>
       <Purp>
-         <Cd>SALA</Cd>
+         <Cd>PENS</Cd>
       </Purp>
       <RmtInf>
          <Ustrd>Factura num.  15010163-13/01/2015 Vto a fecha  08/04/2015</Ustrd>
@@ -90,7 +90,7 @@
       </PmtId>
       <PmtTpInf>
           <SvcLvl><Cd>SEPA</Cd></SvcLvl>
-          <CtgyPurp><Cd>SALA</Cd></CtgyPurp>
+          <CtgyPurp><Cd>PENS</Cd></CtgyPurp>
        </PmtTpInf>
        <Amt>
           <InstdAmt Ccy="EUR">23.42</InstdAmt>
@@ -116,7 +116,7 @@
            </Id>
         </CdtrAcct>
       <Purp>
-         <Cd>SALA</Cd>
+         <Cd>PENS</Cd>
       </Purp>
       <RmtInf>
          <Ustrd>Factura num.  36588-14/02/2015 Vto a fecha  15/04/2015</Ustrd>
@@ -128,7 +128,7 @@
       </PmtId>
       <PmtTpInf>
           <SvcLvl><Cd>SEPA</Cd></SvcLvl>
-          <CtgyPurp><Cd>SALA</Cd></CtgyPurp>
+          <CtgyPurp><Cd>PENS</Cd></CtgyPurp>
        </PmtTpInf>
        <Amt>
           <InstdAmt Ccy="EUR">1063.83</InstdAmt>
@@ -154,7 +154,7 @@
            </Id>
         </CdtrAcct>
       <Purp>
-         <Cd>SALA</Cd>
+         <Cd>PENS</Cd>
       </Purp>
       <RmtInf>
          <Ustrd>Factura num.  2472001-03/02/2015 Vto a fecha  04/04/2015</Ustrd>
@@ -166,7 +166,7 @@
       </PmtId>
       <PmtTpInf>
           <SvcLvl><Cd>SEPA</Cd></SvcLvl>
-          <CtgyPurp><Cd>SALA</Cd></CtgyPurp>
+          <CtgyPurp><Cd>PENS</Cd></CtgyPurp>
        </PmtTpInf>
        <Amt>
           <InstdAmt Ccy="EUR">586.28</InstdAmt>
@@ -192,7 +192,7 @@
            </Id>
         </CdtrAcct>
       <Purp>
-         <Cd>SALA</Cd>
+         <Cd>PENS</Cd>
       </Purp>
       <RmtInf>
          <Ustrd>Factura num.  76060-25/02/2015 Vto a fecha  27/03/2015</Ustrd>
