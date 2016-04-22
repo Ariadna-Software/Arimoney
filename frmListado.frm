@@ -10295,7 +10295,7 @@ End Sub
 
     
 Private Sub Form_Load()
-Dim H As Integer
+Dim h As Integer
 Dim W As Integer
 Dim Img As Image
 
@@ -10365,7 +10365,7 @@ Dim Img As Image
         Me.Frame1.BorderStyle = 0 'sin borde
         FrCobrosPendientesCli.Visible = True
         W = Me.FrCobrosPendientesCli.Width
-        H = Me.FrCobrosPendientesCli.Height + 120
+        h = Me.FrCobrosPendientesCli.Height + 120
         Text3(0).Text = Format(Now, "dd/mm/yyyy")
         'Fecha = CDate(DiasMes(Month(Now), Year(Now)) & "/" & Month(Now) & "/" & Year(Now))
         'Text3(2).Text = Format(Fecha, "dd/mm/yyyy")
@@ -10378,7 +10378,7 @@ Dim Img As Image
     Case 2
         frpagosPendientes.Visible = True
         W = Me.frpagosPendientes.Width
-        H = Me.frpagosPendientes.Height
+        h = Me.frpagosPendientes.Height
         Text3(5).Text = Format(Now, "dd/mm/yyyy")
         'Fecha = CDate(DiasMes(Month(Now), Year(Now)) & "/" & Month(Now) & "/" & Year(Now))
         'Text3(4).Text = Format(Fecha, "dd/mm/yyyy")
@@ -10389,7 +10389,7 @@ Dim Img As Image
         Caption = "Reclamaciones"
         FramereclaMail.Visible = True
         W = Me.FramereclaMail.Width
-        H = Me.FramereclaMail.Height
+        h = Me.FramereclaMail.Height
         Text3(8).Text = Format(Now, "dd/mm/yyyy")
 
         'ESPECIAL
@@ -10401,14 +10401,14 @@ Dim Img As Image
         Caption = "Agentes"
         FrameAgentes.Visible = True
         W = Me.FrameAgentes.Width
-        H = Me.FrameAgentes.Height
+        h = Me.FrameAgentes.Height
         
     Case 5
          
         Caption = "Departamentos"
         FrameDpto.Visible = True
         W = Me.FrameDpto.Width
-        H = Me.FrameDpto.Height
+        h = Me.FrameDpto.Height
         
         
     Case 6, 7
@@ -10416,14 +10416,14 @@ Dim Img As Image
         Caption = "Remesas"
         FrameListRem.Visible = True
         W = Me.FrameListRem.Width
-        H = Me.FrameListRem.Height
+        h = Me.FrameListRem.Height
         FrameOrdenRemesa.Visible = False
         
     Case 8
         FrameListadoCaja.Visible = True
         Caption = "Listado"
         W = Me.FrameListadoCaja.Width
-        H = Me.FrameListadoCaja.Height
+        h = Me.FrameListadoCaja.Height
         
         
     Case 9
@@ -10431,7 +10431,7 @@ Dim Img As Image
         FrameDevEfec.Visible = True
         Caption = "Listado"
         W = Me.FrameDevEfec.Width
-        H = Me.FrameDevEfec.Height + 120
+        h = Me.FrameDevEfec.Height + 120
         
         
     Case 10
@@ -10439,7 +10439,7 @@ Dim Img As Image
         FrameFormaPago.Visible = True
         Caption = "Listado"
         W = Me.FrameFormaPago.Width
-        H = Me.FrameFormaPago.Height
+        h = Me.FrameFormaPago.Height
     Case 11, 13, 43, 44
         
         FrameTransferencias.Visible = True
@@ -10466,7 +10466,7 @@ Dim Img As Image
         End If
         Caption = SQL & " " & Caption
         W = Me.FrameTransferencias.Width
-        H = Me.FrameTransferencias.Height + 60
+        h = Me.FrameTransferencias.Height + 60
         chkCartaAbonos.Visible = Opcion = 13
         
     Case 12
@@ -10474,7 +10474,7 @@ Dim Img As Image
         FramePrevision.Visible = True
         Caption = "Listado"
         W = Me.FramePrevision.Width
-        H = Me.FramePrevision.Height
+        h = Me.FramePrevision.Height
         Text3(18).Text = Format(DateAdd("m", 2, Now), "dd/mm/yyyy")
         
         
@@ -10526,36 +10526,36 @@ Dim Img As Image
         FrameAseg_Bas.Visible = True
         Caption = "Listado"
         W = Me.FrameAseg_Bas.Width
-        H = Me.FrameAseg_Bas.Height
+        h = Me.FrameAseg_Bas.Height
         
         
         
     Case 20
-        H = FrameCobroGenerico.Height + 120
+        h = FrameCobroGenerico.Height + 120
         W = FrameCobroGenerico.Width
         FrameCobroGenerico.Visible = True
         Caption = "Cuenta"
     Case 22
         
         
-        For H = 0 To 1
+        For h = 0 To 1
             
-            txtConcpto(H).Text = RecuperaValor(CadenaDesdeOtroForm, (H * 2) + 1)
-            txtDescConcepto(H).Text = RecuperaValor(CadenaDesdeOtroForm, (H * 2) + 2)
-        Next H
+            txtConcpto(h).Text = RecuperaValor(CadenaDesdeOtroForm, (h * 2) + 1)
+            txtDescConcepto(h).Text = RecuperaValor(CadenaDesdeOtroForm, (h * 2) + 2)
+        Next h
         Me.cboCompensaVto.Clear
         InsertaItemComboCompensaVto "No compensa sobre ningún vencimiento", 0
         
         'Veremos si puede sobre un Vto o no
-        H = RecuperaValor(CadenaDesdeOtroForm, 5)
+        h = RecuperaValor(CadenaDesdeOtroForm, 5)
         CONT = 0
-        If H = 1 Then CONT = RecuperaValor(CadenaDesdeOtroForm, 6)
+        If h = 1 Then CONT = RecuperaValor(CadenaDesdeOtroForm, 6)
         FrameCambioFPCompensa.Visible = CONT > 0
         'chkCompensaVto.Value = 0
         'chkCompensaVto.Enabled = h = 1
         'chkCompensaVto.Caption = RecuperaValor(CadenaDesdeOtroForm, 6)
         CadenaDesdeOtroForm = ""
-        H = FrameCompensaciones.Height + 120
+        h = FrameCompensaciones.Height + 120
         W = FrameCompensaciones.Width
         FrameCompensaciones.Visible = True
         Caption = "Compensacion efectos"
@@ -10658,7 +10658,7 @@ Dim Img As Image
         
         
         
-        H = 0
+        h = 0
         If I = vbTalon Then
             SQL = "taloncta"
         Else
@@ -10668,12 +10668,12 @@ Dim Img As Image
         SQL = DevuelveDesdeBD(SQL, "paramtesor", "codigo", "1")
         If Len(SQL) = vEmpresa.DigitosUltimoNivel Then
             chkAgruparCtaPuente(0).Visible = True
-            H = 1 '
+            h = 1 '
         
             'Si esta configurado en parametrps, si la ultima vez lo marco seguira marcado
-            If H = 1 Then H = CheckValueLeer("Agrup0")
-            If H <> 1 Then H = 0
-            chkAgruparCtaPuente(0).Value = H
+            If h = 1 Then h = CheckValueLeer("Agrup0")
+            If h <> 1 Then h = 0
+            chkAgruparCtaPuente(0).Value = h
             
         Else
             chkAgruparCtaPuente(0).Visible = False
@@ -10690,7 +10690,7 @@ Dim Img As Image
         End If
         cmdRecepDocu.Top = I
         cmdCancelar(23).Top = I
-        H = FrameRecepcionDocumentos.Height + 120
+        h = FrameRecepcionDocumentos.Height + 120
         W = FrameRecepcionDocumentos.Width
         FrameRecepcionDocumentos.Visible = True
         
@@ -10701,7 +10701,7 @@ Dim Img As Image
         
     Case 24
         
-        H = FrameListaRecep.Height + 120
+        h = FrameListaRecep.Height + 120
         W = FrameListaRecep.Width
         FrameListaRecep.Visible = True
         
@@ -10709,7 +10709,7 @@ Dim Img As Image
     Case 25
         
                 
-        H = frameListadoPagosBanco.Height + 120
+        h = frameListadoPagosBanco.Height + 120
         W = frameListadoPagosBanco.Width
         frameListadoPagosBanco.Visible = True
         
@@ -10759,17 +10759,17 @@ Dim Img As Image
         '           1.- cadenaSQL numfac,numsere,fecfac
         '           2.- Numero vto
         '           3.- Importe maximo
-        H = FrameDividVto.Height + 120
+        h = FrameDividVto.Height + 120
         W = FrameDividVto.Width
         FrameDividVto.Visible = True
         
     Case 30
-        H = FrameReclama.Height + 120
+        h = FrameReclama.Height + 120
         W = FrameReclama.Width
         FrameReclama.Visible = True
         
     Case 31
-        H = FrameGastosFijos.Height + 120
+        h = FrameGastosFijos.Height + 120
         W = FrameGastosFijos.Width
         FrameGastosFijos.Top = 0
         FrameGastosFijos.Left = 90
@@ -10778,7 +10778,7 @@ Dim Img As Image
     Case 35
         Me.txtVarios(2).Text = CadenaDesdeOtroForm
         CadenaDesdeOtroForm = ""
-        H = FrameGastosTranasferencia.Height + 120
+        h = FrameGastosTranasferencia.Height + 120
         W = FrameGastosTranasferencia.Width
         FrameGastosTranasferencia.Visible = True
         
@@ -10786,7 +10786,7 @@ Dim Img As Image
     Case 36
         
         
-        H = FrameCompensaAbonosCliente.Height + 120
+        h = FrameCompensaAbonosCliente.Height + 120
         W = FrameCompensaAbonosCliente.Width
         FrameCompensaAbonosCliente.Visible = True
         
@@ -10799,7 +10799,7 @@ Dim Img As Image
         
     Case 38
         
-        H = FrameRecaudaEjec.Height + 120
+        h = FrameRecaudaEjec.Height + 120
         W = FrameRecaudaEjec.Width
         FrameRecaudaEjec.Visible = True
         Fecha = DateAdd("yyyy", -4, Now)
@@ -10807,7 +10807,7 @@ Dim Img As Image
         
         
     Case 39, 40
-        H = FrameOperAsegComunica.Height + 120
+        h = FrameOperAsegComunica.Height + 120
         W = FrameOperAsegComunica.Width
         FrameOperAsegComunica.Visible = True
         
@@ -10835,21 +10835,21 @@ Dim Img As Image
         
         
     Case 42
-        H = FrameNorma57Importar.Height + 120
+        h = FrameNorma57Importar.Height + 120
         W = FrameNorma57Importar.Width
         FrameNorma57Importar.Visible = True
     
     
     Case 45
         
-        H = FrameCobrosAgentesLin.Height + 120
+        h = FrameCobrosAgentesLin.Height + 120
         W = FrameCobrosAgentesLin.Width
         FrameCobrosAgentesLin.Visible = True
         Label3(50).Caption = ""
     End Select
     
     Me.Width = W + 300
-    Me.Height = H + 400
+    Me.Height = h + 400
     
     I = Opcion
     If Opcion = 13 Or I = 43 Or I = 44 Then I = 11
@@ -14967,7 +14967,7 @@ Private Sub ImprimiCompensacion(CodigoCompensacion As Long)
         SQL = SQL & "concat(numserie,right(concat(""000000"",codfaccl),8)) fecha,date_format(fecfaccl,'%d/%m/%Y') ffaccl,"
         SQL = SQL & "scompenclilin.codmacta,if (nommacta is null,nomclien,nommacta) nomcli,"
         SQL = SQL & "date_format(fecvenci,'%d/%m/%Y') venci,impvenci,gastos,impcobro,"
-        SQL = SQL & "impvenci + coalesce(gastos,0) + coalesce(impcobro,0)  tot_al"
+        SQL = SQL & "impvenci + coalesce(gastos,0) - coalesce(impcobro,0)  tot_al"
         SQL = SQL & ",if(fecultco is null,null,date_format(fecultco,'%d/&m')) fecco ,destino"
         SQL = SQL & " From (scompenclilin left join cuentas on scompenclilin.codmacta=cuentas.codmacta)"
         SQL = SQL & ",(SELECT @rownum:=0) r WHERE codigo=" & CONT & " order by destino desc,numserie,codfaccl"
