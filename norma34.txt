@@ -2,10 +2,10 @@
 <Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
 <CstmrCdtTrfInitn>
    <GrpHdr>
-      <MsgId>TRANPAG000002F20160323T102709</MsgId>
-      <CreDtTm>2016-03-23T10:27:09</CreDtTm>
-      <NbOfTxs>4</NbOfTxs>
-      <CtrlSum>1818.73</CtrlSum>
+      <MsgId>TRANPAG000004F20160503T185009</MsgId>
+      <CreDtTm>2016-05-03T18:50:09</CreDtTm>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>24.00</CtrlSum>
       <InitgPty>
          <Nm>Herbelca S.L.</Nm>
          <Id>
@@ -18,9 +18,9 @@
       </InitgPty>
    </GrpHdr>
    <PmtInf>
-      <PmtInfId>20160323102843B46135372</PmtInfId>
+      <PmtInfId>20160503185009B46135372</PmtInfId>
       <PmtMtd>TRF</PmtMtd>
-      <ReqdExctnDt>2015-09-15</ReqdExctnDt>
+      <ReqdExctnDt>2016-05-03</ReqdExctnDt>
       <Dbtr>
          <Nm>Herbelca S.L.</Nm>
          <PstlAdr>
@@ -48,154 +48,40 @@
     </DbtrAgt>
    <CdtTrfTxInf>
       <PmtId>
-         <EndToEndId>15010163  20150113001</EndToEndId>
+         <EndToEndId>321000135720150113001</EndToEndId>
       </PmtId>
       <PmtTpInf>
           <SvcLvl><Cd>SEPA</Cd></SvcLvl>
-          <CtgyPurp><Cd>PENS</Cd></CtgyPurp>
+          <CtgyPurp><Cd>SALA</Cd></CtgyPurp>
        </PmtTpInf>
        <Amt>
-          <InstdAmt Ccy="EUR">145.20</InstdAmt>
+          <InstdAmt Ccy="EUR">24.00</InstdAmt>
        </Amt>
        <CdtrAgt>
           <FinInstnId>
-             <BIC>BSCHESMMXXX</BIC>
+             <BIC>DEUTESBBXXX</BIC>
           </FinInstnId>
        </CdtrAgt>
        <Cdtr>
-          <Nm>CARNES Y CONGELADOS SELEC, S.L.</Nm>
+          <Nm>FRANKE GESELLSCHAFT M.B.H</Nm>
            <Id>
                <OrgId>
                   <Othr>
-                     <Id>B97408991</Id>
+                     <Id>ATU67293458</Id>
                   </Othr>
                </OrgId>
            </Id>
         </Cdtr>
         <CdtrAcct>
            <Id>
-              <IBAN>ES4600490061972610982651</IBAN>
+              <IBAN>ES3300190030604930031031</IBAN>
            </Id>
         </CdtrAcct>
       <Purp>
-         <Cd>PENS</Cd>
+         <Cd>SALA</Cd>
       </Purp>
       <RmtInf>
-         <Ustrd>Factura num.  15010163-13/01/2015 Vto a fecha  08/04/2015</Ustrd>
-      </RmtInf>
-   </CdtTrfTxInf>
-   <CdtTrfTxInf>
-      <PmtId>
-         <EndToEndId>36588     20150214001</EndToEndId>
-      </PmtId>
-      <PmtTpInf>
-          <SvcLvl><Cd>SEPA</Cd></SvcLvl>
-          <CtgyPurp><Cd>PENS</Cd></CtgyPurp>
-       </PmtTpInf>
-       <Amt>
-          <InstdAmt Ccy="EUR">23.42</InstdAmt>
-       </Amt>
-       <CdtrAgt>
-          <FinInstnId>
-             <BIC>BKBKESMMXXX</BIC>
-          </FinInstnId>
-       </CdtrAgt>
-       <Cdtr>
-          <Nm>HERMANOS TOMAS NAVA, S.L.</Nm>
-           <Id>
-               <OrgId>
-                  <Othr>
-                     <Id>B46431144</Id>
-                  </Othr>
-               </OrgId>
-           </Id>
-        </Cdtr>
-        <CdtrAcct>
-           <Id>
-              <IBAN>ES3401280607510101224296</IBAN>
-           </Id>
-        </CdtrAcct>
-      <Purp>
-         <Cd>PENS</Cd>
-      </Purp>
-      <RmtInf>
-         <Ustrd>Factura num.  36588-14/02/2015 Vto a fecha  15/04/2015</Ustrd>
-      </RmtInf>
-   </CdtTrfTxInf>
-   <CdtTrfTxInf>
-      <PmtId>
-         <EndToEndId>2472001   20150203001</EndToEndId>
-      </PmtId>
-      <PmtTpInf>
-          <SvcLvl><Cd>SEPA</Cd></SvcLvl>
-          <CtgyPurp><Cd>PENS</Cd></CtgyPurp>
-       </PmtTpInf>
-       <Amt>
-          <InstdAmt Ccy="EUR">1063.83</InstdAmt>
-       </Amt>
-       <CdtrAgt>
-          <FinInstnId>
-             <BIC>CAIXESBBXXX</BIC>
-          </FinInstnId>
-       </CdtrAgt>
-       <Cdtr>
-          <Nm>KME SPAIN, S.A.</Nm>
-           <Id>
-               <OrgId>
-                  <Othr>
-                     <Id>A33001504</Id>
-                  </Othr>
-               </OrgId>
-           </Id>
-        </Cdtr>
-        <CdtrAcct>
-           <Id>
-              <IBAN>ES0821008633810200032580</IBAN>
-           </Id>
-        </CdtrAcct>
-      <Purp>
-         <Cd>PENS</Cd>
-      </Purp>
-      <RmtInf>
-         <Ustrd>Factura num.  2472001-03/02/2015 Vto a fecha  04/04/2015</Ustrd>
-      </RmtInf>
-   </CdtTrfTxInf>
-   <CdtTrfTxInf>
-      <PmtId>
-         <EndToEndId>76060     20150225001</EndToEndId>
-      </PmtId>
-      <PmtTpInf>
-          <SvcLvl><Cd>SEPA</Cd></SvcLvl>
-          <CtgyPurp><Cd>PENS</Cd></CtgyPurp>
-       </PmtTpInf>
-       <Amt>
-          <InstdAmt Ccy="EUR">586.28</InstdAmt>
-       </Amt>
-       <CdtrAgt>
-          <FinInstnId>
-             <BIC>MMMMESMMXXX</BIC>
-          </FinInstnId>
-       </CdtrAgt>
-       <Cdtr>
-          <Nm>THERMADOR INTERNATIONAL</Nm>
-           <Id>
-               <OrgId>
-                  <Othr>
-                     <Id>FR92487897449</Id>
-                  </Othr>
-               </OrgId>
-           </Id>
-        </Cdtr>
-        <CdtrAcct>
-           <Id>
-              <IBAN>FR7610096181000004269390</IBAN>
-           </Id>
-        </CdtrAcct>
-      <Purp>
-         <Cd>PENS</Cd>
-      </Purp>
-      <RmtInf>
-         <Ustrd>Factura num.  76060-25/02/2015 Vto a fecha  27/03/2015</Ustrd>
+         <Ustrd>Factura num.  3210001357-13/01/2015 Vto a fecha  08/04/2015</Ustrd>
       </RmtInf>
    </CdtTrfTxInf>
    </PmtInf>

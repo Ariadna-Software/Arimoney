@@ -8175,7 +8175,7 @@ Dim Cad As String
         'cad = cad & " AND spagop.transfer is null and spagop.impefect>0"
         Cad = Cad & " AND spagop.transfer is null"
         'El importe NO DEBE SER INFERIOR A 0
-        Cad = Cad & " AND impefect > 0"
+        Cad = Cad & " AND impefect-coalesce(imppagad,0) > 0"
         SQL = "spagop.fecefect"
     Else
         'Transferencias en cobros. SOn abonos
@@ -8261,7 +8261,7 @@ Dim Cad As String
         If SubTipo = 0 Then
             SQL = "Select sum(impvenci) from scobro"
         Else
-            SQL = "Select sum(impefect) from spagop"
+            SQL = "Select sum(impefect-coalesce(imppagad,0)) from spagop"
         End If
         SQL = SQL & " WHERE transfer =" & I
         Set miRsAux = New ADODB.Recordset
@@ -9787,7 +9787,7 @@ Dim Dias As Integer
             Set IT = ListView2.ListItems.Add
             IT.Text = RS!Anyo
             IT.SubItems(1) = RS!Codigo
-            IT.SubItems(2) = RS!descripcion
+            IT.SubItems(2) = RS!Descripcion
             IT.SubItems(3) = RS!fecremesa
             IT.SubItems(4) = RS!codmacta
             IT.SubItems(5) = RS!Nommacta
@@ -10174,7 +10174,7 @@ Dim Importe As Currency
 
     While Not miRsAux.EOF
         Set IT = ListView4.ListItems.Add()
-        IT.Text = miRsAux!descripcion
+        IT.Text = miRsAux!Descripcion
         IT.SubItems(1) = Format(miRsAux!Fecha, "dd/mm/yyyy")
         IT.SubItems(2) = Format(miRsAux!Importe, FormatoImporte)
         IT.Checked = True

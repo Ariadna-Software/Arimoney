@@ -2866,7 +2866,7 @@ End Sub
 Private Sub Linea3_68(NF As Integer, ByRef CodOrde As String, ByRef RS1 As ADODB.Recordset, ByRef Cad As String)
     Cad = CodOrde    'llevara tb la ID del socio
     Cad = Cad & "012"
-    Cad = Cad & RellenaABlancos(DBLet(RS1!codposta, "T"), True, 5) & " "
+    Cad = Cad & RellenaABlancos(DBLet(RS1!codposta, "T"), False, 5)
     Cad = Cad & RellenaABlancos(DBLet(RS1!despobla, "T"), True, 40)
     Cad = RellenaABlancos(Cad, True, 100)
     Cad = Mid(Cad, 1, 100)
@@ -2877,8 +2877,7 @@ Private Sub Linea4_68(NF As Integer, ByRef CodOrde As String, ByRef RS1 As ADODB
     Cad = CodOrde    'llevara tb la ID del socio
     Cad = Cad & "013"
     'De mommento pongo balancos, ya que es para extranjero
-    'Cad = Cad & RellenaABlancos(DBLet(RS1!codposta, "T"), False, 5) & " "
-    Cad = Cad & "     "
+    Cad = Cad & RellenaABlancos(DBLet(RS1!codposta, "T"), True, 9)
     Cad = Cad & RellenaABlancos(DBLet(RS1!desprovi, "T"), True, 30)   'desprovi,pais
     Cad = Cad & RellenaABlancos(DBLet(RS1!PAIS, "T"), True, 20)   'desprovi,pais
     Cad = RellenaABlancos(Cad, True, 100)
@@ -2900,9 +2899,10 @@ Private Sub Linea5_68(NF As Integer, ByRef CodOrde As String, ByRef RS1 As ADODB
    
     Cad = Cad & RellenaAceros(CStr(Round(Importe1, 2) * 100), False, 12)
     Cad = Cad & "0" 'presentacion
-    Cad = Cad & "ES1" 'presentacion
+    'Cad = Cad & "ES1" 'presentacion
+    Cad = Cad & "   " 'En el pdf pone que el pais es para NO residentes
     Cad = RellenaABlancos(Cad, True, 100)
-    Cad = Mid(Cad, 1, 99) & "1"
+    Cad = Mid(Cad, 1, 99) & " "   'Antes ponia un 1. Mayo16'
     Print #NF, Cad
 End Sub
 
@@ -2922,7 +2922,7 @@ Private Sub Linea6_68(NF As Integer, ByRef CodOrde As String, ByRef RS1 As ADODB
     
     Cad = Cad & "H"
     'Cad = Cad & RellenaABlancos(vConceptoTransferencia, False, 26)
-    Cad = Cad & "ADJUNTAMOS PAGO FACTURA     "
+    Cad = Cad & "PAGO FACTURA   " & RS1!numfactu
     Cad = RellenaABlancos(Cad, True, 100)
     Cad = Mid(Cad, 1, 100)
     Print #NF, Cad

@@ -666,7 +666,10 @@ Dim SQL As String
     If MsgBox(SQL, vbQuestion + vbYesNoCancel) = vbYes Then
         'Hay que eliminar
         If TipoDeFrm <> 0 Then
-            SQL = "UPDATE spagop set transfer=NULL where transfer =" & adodc1.Recordset!Codigo
+            SQL = "UPDATE spagop set transfer=NULL "
+            'Abril 2015
+            SQL = SQL & ", emitdocum =0"
+            SQL = SQL & " where transfer =" & adodc1.Recordset!Codigo
         Else
             SQL = "UPDATE scobro set transfer=NULL where transfer =" & adodc1.Recordset!Codigo
         End If
@@ -687,7 +690,7 @@ Dim SQL As String
         
 Error2:
         Screen.MousePointer = vbDefault
-        If Err.Number <> 0 Then MuestraError Err.Number, "Eliminar diario", Err.Description
+        If Err.Number <> 0 Then MuestraError Err.Number, "Eliminar en " & Me.Caption, Err.Description
 End Sub
 
 
@@ -809,7 +812,7 @@ Private Sub MOntaSQL2(ByRef vSQL As String, vnuevo As Byte)
         End If
         vSQL = " sforpa.tipforpa = " & vSQL
         If vnuevo = 0 Then
-            vSQL = vSQL & " AND spagop.transfer is null and impefect>0"
+            vSQL = vSQL & " AND spagop.transfer is null and impefect - coalesce(imppagad,0)>0"
         Else
             If vnuevo = 1 Then
                 vSQL = vSQL & " AND ((spagop.transfer is null) or spagop.transfer = " & adodc1.Recordset!Codigo & ") and impefect > 0"
@@ -1414,18 +1417,18 @@ Dim B As Boolean
     Set miRsAux = Nothing
     If TipoDeFrm < 2 Then
         'B = GeneraFicheroNorma34(NIF, Adodc1.Recordset!Fecha, Adodc1.Recordset!codmacta, "9", Adodc1.Recordset!Codigo, Adodc1.Recordset!descripcion, TipoDeFrm <> 0)
-        B = GeneraFicheroNorma34(NIF, adodc1.Recordset!Fecha, adodc1.Recordset!codmacta, CStr(adodc1.Recordset!conceptoTrans), adodc1.Recordset!Codigo, adodc1.Recordset!descripcion, TipoDeFrm <> 0)
+        B = GeneraFicheroNorma34(NIF, adodc1.Recordset!Fecha, adodc1.Recordset!codmacta, CStr(adodc1.Recordset!conceptoTrans), adodc1.Recordset!Codigo, adodc1.Recordset!Descripcion, TipoDeFrm <> 0)
     
     Else
         
         
         If vParam.PagosConfirmingCaixa Then
             'Van por una "norma" de la caixa. De momento picassent
-            B = GeneraFicheroCaixaConfirming(NIF, adodc1.Recordset!Fecha, adodc1.Recordset!codmacta, adodc1.Recordset!Codigo, adodc1.Recordset!descripcion)
+            B = GeneraFicheroCaixaConfirming(NIF, adodc1.Recordset!Fecha, adodc1.Recordset!codmacta, adodc1.Recordset!Codigo, adodc1.Recordset!Descripcion)
         Else
             'Q68
             'Fontenas, herbelca....
-            B = GeneraFicheroNorma68(NIF, adodc1.Recordset!Fecha, adodc1.Recordset!codmacta, adodc1.Recordset!Codigo, adodc1.Recordset!descripcion)
+            B = GeneraFicheroNorma68(NIF, adodc1.Recordset!Fecha, adodc1.Recordset!codmacta, adodc1.Recordset!Codigo, adodc1.Recordset!Descripcion)
         End If
     End If
     If B Then
