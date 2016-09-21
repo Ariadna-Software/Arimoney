@@ -1823,7 +1823,7 @@ End Sub
 
 Private Sub Form_Resize()
 Dim I As Integer
-Dim h As Integer
+Dim H As Integer
     If Me.WindowState = 1 Then Exit Sub  'Minimizar
     If Me.Height < 2700 Then Me.Height = 2700
     If Me.Width < 2700 Then Me.Width = 2700
@@ -1840,7 +1840,7 @@ Dim h As Integer
     Me.ListView1.Width = Me.frame.Width
     
     'Las columnas
-    h = ListView1.Tag
+    H = ListView1.Tag
     ListView1.Tag = ListView1.Width - ListView1.Tag - 320 'Del margen
     For I = 1 To Me.ListView1.ColumnHeaders.Count
         If InStr(1, ListView1.ColumnHeaders(I).Tag, "%") Then
@@ -1851,7 +1851,7 @@ Dim h As Integer
         End If
         Me.ListView1.ColumnHeaders(I).Width = Val(Cad)
     Next I
-    ListView1.Tag = h
+    ListView1.Tag = H
 End Sub
 
 
@@ -5196,13 +5196,23 @@ Dim SQL As String
 Dim ColVtosQuePago As Collection
 Dim FVto As Date
     
-Dim EsHortoNature As Boolean
+Dim QuitarFechaVto_ As Byte  '0 No quito vto.  1: Natural Horto  2: Morales -AVAB
     
-    'En hortonature / natural de montaña quitamos la fecha de veto para que quepan en dos clolumnas
     ' De momento, y a falta de poner parametro, vuscare en nombre de la empresa
+    'En hortonature / natural de montaña quitamos la fecha de veto para que quepan en dos clolumnas
+    
     I = InStr(1, UCase(vEmpresa.nomempre), "MONTAÑA")
     If I = 0 Then I = InStr(1, UCase(vEmpresa.nomempre), "HORTONATURE")
-    EsHortoNature = I > 0
+    If I > 0 Then I = 1
+        
+    'AVAB y morales tampopo lo quiere
+    If I = 0 Then
+        I = InStr(1, UCase(vEmpresa.nomempre), "MORALES")
+        If I = 0 Then I = InStr(1, UCase(vEmpresa.nomempre), "BLANQUETA")
+        If I > 0 Then I = 2
+    End If
+    QuitarFechaVto_ = CByte(I)
+    
     
     'La fecha de vencimiento debe coger la MAYOR de todas
     FVto = "01/01/1900"
@@ -5301,11 +5311,12 @@ Dim EsHortoNature As Boolean
         
         AUX = Mid(RecuperaValor(CStr(ColVtosQuePago.Item(I)), 1) & Space(10), 1, 10) & " "
     
-
+        'Separo la fecha para algunos
+        If QuitarFechaVto_ = 2 Then AUX = AUX & "    "
         AUX = AUX & Mid(Format(RecuperaValor(CStr(ColVtosQuePago.Item(I)), 2), "dd/mm/yyyy") & Space(10), 1, 10) & "   "
         
         
-        If Not EsHortoNature Then   'para todos menos para natural de montaña
+        If QuitarFechaVto_ = 0 Then 'para todos menos para natural de montaña-morales
             AUX = AUX & Format(RecuperaValor(CStr(ColVtosQuePago.Item(I)), 4), "dd/mm/yyyy") & "   "
              'Solo reservo pocos espacios, muy justos
             AUX = AUX & Right(Space(13) & RecuperaValor(CStr(ColVtosQuePago.Item(I)), 5), 13) & " "

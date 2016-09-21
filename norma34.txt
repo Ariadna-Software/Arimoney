@@ -2,8 +2,8 @@
 <Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
 <CstmrCdtTrfInitn>
    <GrpHdr>
-      <MsgId>TRANPAG000004F20160503T185009</MsgId>
-      <CreDtTm>2016-05-03T18:50:09</CreDtTm>
+      <MsgId>TRANPAG000004F20160530T185005</MsgId>
+      <CreDtTm>2016-05-30T18:50:05</CreDtTm>
       <NbOfTxs>1</NbOfTxs>
       <CtrlSum>24.00</CtrlSum>
       <InitgPty>
@@ -18,7 +18,7 @@
       </InitgPty>
    </GrpHdr>
    <PmtInf>
-      <PmtInfId>20160503185009B46135372</PmtInfId>
+      <PmtInfId>20160530185005B46135372</PmtInfId>
       <PmtMtd>TRF</PmtMtd>
       <ReqdExctnDt>2016-05-03</ReqdExctnDt>
       <Dbtr>

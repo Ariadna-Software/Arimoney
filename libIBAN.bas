@@ -13,7 +13,7 @@ Option Explicit
 '
 'Puede NO poner pais. Sera ES
 Public Function DevuelveIBAN2(PAIS As String, ByVal CtaBancoFormateada As String, DosCaracteresIBAN As String) As Boolean
-Dim Aux As String
+Dim AUX As String
 Dim N As Long
 Dim CadenaPais As String
 On Error GoTo EDevuelveIBAN
@@ -55,21 +55,21 @@ On Error GoTo EDevuelveIBAN
     'Se le añaden 2 ceros al final
     CadenaPais = CadenaPais & "00"
     'Esta es la cadena para ES. SiCadenaPais  fuera otro pais es aqui donde hay que cambiar
-    CtaBancoFormateada = CtaBancoFormateada & "142800"
-    Aux = ""
+    CtaBancoFormateada = CtaBancoFormateada & CadenaPais
+    AUX = ""
     While CtaBancoFormateada <> ""
         If Len(CtaBancoFormateada) >= 6 Then
-            Aux = Aux & Mid(CtaBancoFormateada, 1, 6)
+            AUX = AUX & Mid(CtaBancoFormateada, 1, 6)
             CtaBancoFormateada = Mid(CtaBancoFormateada, 7)
         Else
-            Aux = Aux & CtaBancoFormateada
+            AUX = AUX & CtaBancoFormateada
             CtaBancoFormateada = ""
         End If
         
-        N = CLng(Aux)
+        N = CLng(AUX)
         N = N Mod 97
         
-        Aux = CStr(N)
+        AUX = CStr(N)
     Wend
         
     N = 98 - N
@@ -89,21 +89,21 @@ End Function
 'DADO un txtIBAN de 4 posciones los dos primeros podriamos comprobar el pais en una tabla
 ' y los dos sugientes son numericos
 Public Function IBAN_Correcto(IBAN As String) As Boolean
-Dim Aux As String
+Dim AUX As String
     IBAN_Correcto = False
-    Aux = ""
+    AUX = ""
     If Len(IBAN) <> 4 Then
-        Aux = "Longitud incorrecta"
+        AUX = "Longitud incorrecta"
     Else
-        If IsNumeric(Mid(Aux, 3, 2)) Then
-            Aux = "Digitos 3 y 4 deben ser numericos"
+        If IsNumeric(Mid(AUX, 3, 2)) Then
+            AUX = "Digitos 3 y 4 deben ser numericos"
         Else
             'Podriamos comprobar lista de paises
     
         End If
     End If
-    If Aux <> "" Then
-        MsgBox Aux, vbExclamation
+    If AUX <> "" Then
+        MsgBox AUX, vbExclamation
     Else
         IBAN_Correcto = True
     End If
