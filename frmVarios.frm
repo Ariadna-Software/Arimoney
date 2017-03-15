@@ -5672,7 +5672,7 @@ Dim ContabilizacionEspecialNorma19 As Boolean
             If DBLet(RS!Tiporem, "N") = 1 Then
                 If vParam.Norma19xFechaVto Then
                     If Not IsNull(RS!Tipo) Then
-                        If RS!Tipo = 0 Then
+                        If RS!Tipo = 0 Or RS!Tipo = 3 Then   'ENERO 2017- NO estaba tipo=3 que son remesas por fecha vto
                             'NORMA 19
                             'Contbiliza por fecha VTO
                             'Comprobaremos que toooodos estan en fecha ejercicio
@@ -6113,7 +6113,7 @@ Dim TipoFicheroDevolucion As Byte
         SQL = ""
         If Me.txtCtaNormal(11).Text <> "" Then SQL = SQL & " AND codmacta='" & Me.txtCtaNormal(11).Text & "'"
         If txtSerie(4).Text <> "" Then SQL = SQL & " AND numserie = '" & txtSerie(4).Text & "'"
-        If txtnumfac(4).Text <> "" Then SQL = SQL & " AND codfaccl = " & txtnumfac(4).Text
+        If txtNumfac(4).Text <> "" Then SQL = SQL & " AND codfaccl = " & txtNumfac(4).Text
         If txtNumero.Text <> "" Then SQL = SQL & " AND numorden = " & txtNumero.Text
         SQL = Mid(SQL, 5)
         
@@ -6686,8 +6686,8 @@ Dim C As String
 
     
     CuentasCC = "codfaccl"
-    If txtnumfac(3).Text <> "" Then C = C & " AND " & CuentasCC & " >= " & txtnumfac(3).Text
-    If txtnumfac(2).Text <> "" Then C = C & " AND " & CuentasCC & " <= " & txtnumfac(2).Text
+    If txtNumfac(3).Text <> "" Then C = C & " AND " & CuentasCC & " >= " & txtNumfac(3).Text
+    If txtNumfac(2).Text <> "" Then C = C & " AND " & CuentasCC & " <= " & txtNumfac(2).Text
     
     
     CuentasCC = "scobro.codmacta"
@@ -7263,10 +7263,10 @@ Dim colCtas As Collection
             SQL = SQL & " AND scobro.fecfaccl <= '" & Format(Text1(21).Text, FormatoFecha) & "'"
         
         'Codigo factura
-        If txtnumfac(0).Text <> "" Then _
-            SQL = SQL & " AND scobro.codfaccl >= '" & txtnumfac(0).Text & "'"
-        If txtnumfac(1).Text <> "" Then _
-            SQL = SQL & " AND scobro.codfaccl <= '" & txtnumfac(1).Text & "'"
+        If txtNumfac(0).Text <> "" Then _
+            SQL = SQL & " AND scobro.codfaccl >= '" & txtNumfac(0).Text & "'"
+        If txtNumfac(1).Text <> "" Then _
+            SQL = SQL & " AND scobro.codfaccl <= '" & txtNumfac(1).Text & "'"
         
         
     Else
@@ -8387,7 +8387,7 @@ Private Sub Form_Activate()
 End Sub
 
 Private Sub Form_Load()
-Dim h As Integer
+Dim H As Integer
 Dim W As Integer
     Limpiar Me
     PrimeraVez = True
@@ -8441,7 +8441,7 @@ Dim W As Integer
         Me.txtCta(0).Text = ""
         Me.txtDescCta(0).Text = ""
         FrameCobros.Visible = True
-        h = FrameCobros.Height + 60
+        H = FrameCobros.Height + 60
         W = FrameCobros.Width
         I = LeerGuardarOrdenacion(True, True, I)
         Me.optOrdCob(I).Value = True
@@ -8478,7 +8478,7 @@ Dim W As Integer
         Me.txtDescCta(1).Text = ""
         Framepagos.Visible = True
         FrameDocPorveedor.Visible = False
-        h = Framepagos.Height
+        H = Framepagos.Height
         W = Framepagos.Width
         I = LeerGuardarOrdenacion(True, False, I)
         Me.optOrdPag(I).Value = True
@@ -8518,7 +8518,7 @@ Dim W As Integer
             Me.Label2(20 + W).Visible = Cancelado
             Me.Label2(22 + W).Visible = Cancelado
             txtSerie(W).Visible = Cancelado
-            txtnumfac(W).Visible = Cancelado
+            txtNumfac(W).Visible = Cancelado
             txtDCtaNormal(W + 3).Visible = Cancelado
             txtCtaNormal(W + 3).Visible = Cancelado
             imgCtaNorma(W + 3).Visible = Cancelado
@@ -8532,7 +8532,7 @@ Dim W As Integer
         CargaList
         PonerValoresDefectoRemesas
         FrameRemesa2.Visible = True
-        h = FrameRemesa2.Height
+        H = FrameRemesa2.Height
         W = FrameRemesa2.Width
         
     Case 6, 7
@@ -8553,12 +8553,12 @@ Dim W As Integer
         
         FrameCambioRemesa.Visible = True
         
-        For h = 1 To 3
-                Text3(h - 1).Text = RecuperaValor(CadenaDesdeOtroForm, h)
-        Next h
+        For H = 1 To 3
+                Text3(H - 1).Text = RecuperaValor(CadenaDesdeOtroForm, H)
+        Next H
         Text3(7).Text = RecuperaValor(CadenaDesdeOtroForm, 6)
-        h = Val(RecuperaValor(CadenaDesdeOtroForm, 7))
-        Text3(7).Tag = h
+        H = Val(RecuperaValor(CadenaDesdeOtroForm, 7))
+        Text3(7).Tag = H
         'Por defecto
         chkSEPA_GraboNIF(0).Visible = False
         chkSEPA_GraboNIF(1).Visible = False
@@ -8566,9 +8566,9 @@ Dim W As Integer
         
         ImageAyuda(0).Visible = vParam.NuevasNormasSEPA
         
-        If h = 2 Then
+        If H = 2 Then
             SubTipo = vbPagare
-        ElseIf h = 3 Then
+        ElseIf H = 3 Then
             SubTipo = vbTalon
         Else
             SubTipo = vbTipoPagoRemesa
@@ -8638,7 +8638,7 @@ Dim W As Integer
             
             
         End Select
-        h = FrameCambioRemesa.Height
+        H = FrameCambioRemesa.Height
         W = FrameCambioRemesa.Width
         CadenaDesdeOtroForm = ""
         
@@ -8692,7 +8692,7 @@ Dim W As Integer
         
         
         W = FrameContabilRem2.Width
-        h = FrameContabilRem2.Height
+        H = FrameContabilRem2.Height
     Case 9, 16, 28
         If SubTipo = 1 Then
             Caption = "EFECTOS"
@@ -8704,7 +8704,7 @@ Dim W As Integer
         Me.FrameDevDesdeVto.Visible = Opcion = 28
         Caption = "Devolucion remesa (" & UCase(Caption) & ")"
         W = FrameDevlucionRe.Width
-        h = FrameDevlucionRe.Height
+        H = FrameDevlucionRe.Height
         Text1(11).Text = Format(Now, "dd/mm/yyyy")
         txtImporte(1).Text = 0
     
@@ -8715,7 +8715,7 @@ Dim W As Integer
         Me.FrameImpagados.Visible = True
         Caption = "Devoluciones"
         W = FrameImpagados.Width
-        h = FrameImpagados.Height
+        H = FrameImpagados.Height
         CargaImpagados
         CargaIconoListview ListView1
         
@@ -8724,14 +8724,14 @@ Dim W As Integer
         CargaImagen
         Me.Caption = "Acerca de ....."
         W = Me.frameAcercaDE.Width
-        h = Me.frameAcercaDE.Height + 50
+        H = Me.frameAcercaDE.Height + 50
         Me.frameAcercaDE.Visible = True
         Label13.Caption = "Versión:  " & App.Major & "." & App.Minor & "." & App.Revision & " "
         
     Case 12
         Me.Caption = "Borrar vencimientos"
         W = Me.FrameElimVtos.Width
-        h = Me.FrameElimVtos.Height + 200
+        H = Me.FrameElimVtos.Height + 200
         Me.FrameElimVtos.Visible = True
         CargaIconoListview ListView2
         
@@ -8744,7 +8744,7 @@ Dim W As Integer
         End If
         
         W = Me.FrameDeuda.Width
-        h = Me.FrameDeuda.Height + 200
+        H = Me.FrameDeuda.Height + 200
         Me.FrameDeuda.Visible = True
         Text1(13).Text = Format(Now, "dd/mm/yyyy")
         cargaEmpresasTesor ListView3
@@ -8774,7 +8774,7 @@ Dim W As Integer
             Me.cboConcepto.ListIndex = 0
         End If
         W = Me.FrameTransfer.Width
-        h = Me.FrameTransfer.Height + 200
+        H = Me.FrameTransfer.Height + 200
         Text1(16).Text = Format(Now, "dd/mm/yyyy")
         Text1(14).Text = Text1(16).Text
         
@@ -8788,7 +8788,7 @@ Dim W As Integer
         Me.Caption = "Hco remesas"
         If SubTipo <> vbTipoPagoRemesa Then Me.Caption = Me.Caption & " (Talones-Pagarés)"
         W = Me.FrameElimnaHcoReme.Width
-        h = Me.FrameElimnaHcoReme.Height '+ 200
+        H = Me.FrameElimnaHcoReme.Height '+ 200
         Text1(17).Text = Format(DateAdd("m", -2, Now), "dd/mm/yyyy")
     
     Case 18
@@ -8796,7 +8796,7 @@ Dim W As Integer
         FrameSelecGastos.Visible = True
         Me.Caption = "Seleccionar gastos"
         W = Me.FrameSelecGastos.Width
-        h = Me.FrameSelecGastos.Height '+ 200
+        H = Me.FrameSelecGastos.Height '+ 200
         Label5(7).Caption = RecuperaValor(CadenaDesdeOtroForm, 1)
         CargaIconoListview ListView4
         
@@ -8806,60 +8806,60 @@ Dim W As Integer
         Me.Caption = "Contabilizar gastos fijos "
         FrameContabilizarGasto.Visible = True
         W = Me.FrameContabilizarGasto.Width
-        h = Me.FrameContabilizarGasto.Height '+ 200
+        H = Me.FrameContabilizarGasto.Height '+ 200
         
     Case 20
         
         Me.Caption = "Empresas disponibles"
         FrameeMPRESAS.Visible = True
         W = Me.FrameeMPRESAS.Width
-        h = Me.FrameeMPRESAS.Height '+ 200
+        H = Me.FrameeMPRESAS.Height '+ 200
         CargaEmpresas
         
     Case 21
         Caption = "Seleccionar cuentas"
         FrameAgregarCuentas.Visible = True
         W = Me.FrameAgregarCuentas.Width
-        h = Me.FrameAgregarCuentas.Height + 200
+        H = Me.FrameAgregarCuentas.Height + 200
         
     Case 24
         Caption = "Impresion"
          
         FrImprimeRecibos.Visible = True
         W = Me.FrImprimeRecibos.Width
-        h = Me.FrImprimeRecibos.Height + 200
+        H = Me.FrImprimeRecibos.Height + 200
         
     Case 25
         Caption = "Remesas"
         FrameModiRemeTal.Visible = True
         W = Me.FrameModiRemeTal.Width
-        h = Me.FrameModiRemeTal.Height + 100
+        H = Me.FrameModiRemeTal.Height + 100
     Case 29
         Caption = "Recaudacion"
         FrameRecaudacionEjecutiva.Visible = True
         W = Me.FrameRecaudacionEjecutiva.Width
-        h = Me.FrameRecaudacionEjecutiva.Height + 100
+        H = Me.FrameRecaudacionEjecutiva.Height + 100
         
     Case 31
         
         Caption = "Recaudacion"
         FrameReclamaEmail.Visible = True
         W = Me.FrameReclamaEmail.Width
-        h = Me.FrameReclamaEmail.Height + 100
+        H = Me.FrameReclamaEmail.Height + 100
         SubTipo = 1 'Para que cuando le de al ASPA del forma NO cierre
         
     End Select
     
     
-    Me.Height = h + 360
+    Me.Height = H + 360
     Me.Width = W + 90
     
-    h = Opcion
-    If Opcion = 7 Then h = 6
-    If Opcion = 14 Then h = 13
-    If Opcion = 16 Or Opcion = 28 Then h = 9
-    If Opcion = 22 Or Opcion = 23 Then h = 8
-    Me.cmdCancelar(h).Cancel = True
+    H = Opcion
+    If Opcion = 7 Then H = 6
+    If Opcion = 14 Then H = 13
+    If Opcion = 16 Or Opcion = 28 Then H = 9
+    If Opcion = 22 Or Opcion = 23 Then H = 8
+    Me.cmdCancelar(H).Cancel = True
     
 End Sub
 
@@ -9157,7 +9157,7 @@ Private Sub imgFra_Click()
         If CadenaDesdeOtroForm <> "" Then
 
             txtSerie(4).Text = RecuperaValor(CadenaDesdeOtroForm, 1)
-            txtnumfac(4).Text = RecuperaValor(CadenaDesdeOtroForm, 2)
+            txtNumfac(4).Text = RecuperaValor(CadenaDesdeOtroForm, 2)
             Me.txtNumero.Text = RecuperaValor(CadenaDesdeOtroForm, 4)
             Ponerfoco Text1(11)
         End If
@@ -10464,7 +10464,7 @@ End Sub
 
 
 Private Sub txtnumfac_GotFocus(Index As Integer)
-    ObtenerFoco txtnumfac(Index)
+    ObtenerFoco txtNumfac(Index)
 End Sub
 
 Private Sub txtnumfac_KeyPress(Index As Integer, KeyAscii As Integer)
@@ -10472,12 +10472,12 @@ Private Sub txtnumfac_KeyPress(Index As Integer, KeyAscii As Integer)
 End Sub
 
 Private Sub txtnumfac_LostFocus(Index As Integer)
-    txtnumfac(Index).Text = Trim(txtnumfac(Index).Text)
-    If txtnumfac(Index).Text = "" Then Exit Sub
-    If Not IsNumeric(txtnumfac(Index).Text) Then
+    txtNumfac(Index).Text = Trim(txtNumfac(Index).Text)
+    If txtNumfac(Index).Text = "" Then Exit Sub
+    If Not IsNumeric(txtNumfac(Index).Text) Then
         MsgBox "Campo numerico.", vbExclamation
-        If Index = 4 Then txtnumfac(Index).Text = ""
-        Ponerfoco txtnumfac(Index)
+        If Index = 4 Then txtNumfac(Index).Text = ""
+        Ponerfoco txtNumfac(Index)
     End If
 End Sub
 

@@ -2,86 +2,162 @@
 <Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
 <CstmrCdtTrfInitn>
    <GrpHdr>
-      <MsgId>TRANPAG000004F20160530T185005</MsgId>
-      <CreDtTm>2016-05-30T18:50:05</CreDtTm>
-      <NbOfTxs>1</NbOfTxs>
-      <CtrlSum>24.00</CtrlSum>
+      <MsgId>TRANPAG000001F20170104T172331</MsgId>
+      <CreDtTm>2017-01-04T17:23:31</CreDtTm>
+      <NbOfTxs>3</NbOfTxs>
+      <CtrlSum>1908.37</CtrlSum>
       <InitgPty>
-         <Nm>Herbelca S.L.</Nm>
+         <Nm>COOP.V. CRISTO DE LA SALUD</Nm>
          <Id>
            <OrgId>
                <Othr>
-                  <Id>B46135372070</Id>
+                  <Id>F46026464000</Id>
                </Othr>
            </OrgId>
          </Id>
       </InitgPty>
    </GrpHdr>
    <PmtInf>
-      <PmtInfId>20160530185005B46135372</PmtInfId>
+      <PmtInfId>20170104172331F46026464</PmtInfId>
       <PmtMtd>TRF</PmtMtd>
-      <ReqdExctnDt>2016-05-03</ReqdExctnDt>
+      <ReqdExctnDt>2017-01-04</ReqdExctnDt>
       <Dbtr>
-         <Nm>Herbelca S.L.</Nm>
+         <Nm>COOP.V. CRISTO DE LA SALUD</Nm>
          <PstlAdr>
             <Ctry>ES</Ctry>
-            <AdrLine>CL Azagador de la Torre 93  VALENCIA</AdrLine>
+            <AdrLine>PA Avd. Pintor Tarras  62  VALENCIA</AdrLine>
          </PstlAdr>
          <Id>
             <OrgId>
                <Othr>
-                  <Id>B46135372070</Id>
+                  <Id>F46026464000</Id>
                </Othr>
             </OrgId>
          </Id>
     </Dbtr>
     <DbtrAcct>
        <Id>
-          <IBAN>ES2800810693600002093621</IBAN>
+          <IBAN>ES3330582262882710000071</IBAN>
        </Id>
        <Ccy>EUR</Ccy>
     </DbtrAcct>
     <DbtrAgt>
        <FinInstnId>
-          <BIC>BSABESBBXXX</BIC>
+          <BIC>CCRIES2AXXX</BIC>
        </FinInstnId>
     </DbtrAgt>
    <CdtTrfTxInf>
       <PmtId>
-         <EndToEndId>321000135720150113001</EndToEndId>
+         <EndToEndId>FR1500828120151126001</EndToEndId>
       </PmtId>
       <PmtTpInf>
           <SvcLvl><Cd>SEPA</Cd></SvcLvl>
           <CtgyPurp><Cd>SALA</Cd></CtgyPurp>
        </PmtTpInf>
        <Amt>
-          <InstdAmt Ccy="EUR">24.00</InstdAmt>
+          <InstdAmt Ccy="EUR">127.90</InstdAmt>
        </Amt>
        <CdtrAgt>
           <FinInstnId>
-             <BIC>DEUTESBBXXX</BIC>
+             <BIC>MENTIRASXXX</BIC>
           </FinInstnId>
        </CdtrAgt>
        <Cdtr>
-          <Nm>FRANKE GESELLSCHAFT M.B.H</Nm>
+          <Nm>COARVAL, COOP.V.</Nm>
            <Id>
                <OrgId>
                   <Othr>
-                     <Id>ATU67293458</Id>
+                     <Id>F46160875</Id>
                   </Othr>
                </OrgId>
            </Id>
         </Cdtr>
         <CdtrAcct>
            <Id>
-              <IBAN>ES3300190030604930031031</IBAN>
+              <IBAN>ES8600010002090000000004</IBAN>
            </Id>
         </CdtrAcct>
       <Purp>
          <Cd>SALA</Cd>
       </Purp>
       <RmtInf>
-         <Ustrd>Factura num.  3210001357-13/01/2015 Vto a fecha  08/04/2015</Ustrd>
+         <Ustrd>Factura num.  FR15008281-26/11/2015 Vto a fecha  26/11/2015</Ustrd>
+      </RmtInf>
+   </CdtTrfTxInf>
+   <CdtTrfTxInf>
+      <PmtId>
+         <EndToEndId>FR1500831620151130001</EndToEndId>
+      </PmtId>
+      <PmtTpInf>
+          <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+          <CtgyPurp><Cd>SALA</Cd></CtgyPurp>
+       </PmtTpInf>
+       <Amt>
+          <InstdAmt Ccy="EUR">751.12</InstdAmt>
+       </Amt>
+       <CdtrAgt>
+          <FinInstnId>
+             <BIC>MENTIRASXXX</BIC>
+          </FinInstnId>
+       </CdtrAgt>
+       <Cdtr>
+          <Nm>COARVAL, COOP.V.</Nm>
+           <Id>
+               <OrgId>
+                  <Othr>
+                     <Id>F46160875</Id>
+                  </Othr>
+               </OrgId>
+           </Id>
+        </Cdtr>
+        <CdtrAcct>
+           <Id>
+              <IBAN>ES8600010002090000000004</IBAN>
+           </Id>
+        </CdtrAcct>
+      <Purp>
+         <Cd>SALA</Cd>
+      </Purp>
+      <RmtInf>
+         <Ustrd>Factura num.  FR15008316-30/11/2015 Vto a fecha  30/11/2015</Ustrd>
+      </RmtInf>
+   </CdtTrfTxInf>
+   <CdtTrfTxInf>
+      <PmtId>
+         <EndToEndId>FR1500833020151202001</EndToEndId>
+      </PmtId>
+      <PmtTpInf>
+          <SvcLvl><Cd>SEPA</Cd></SvcLvl>
+          <CtgyPurp><Cd>SALA</Cd></CtgyPurp>
+       </PmtTpInf>
+       <Amt>
+          <InstdAmt Ccy="EUR">1029.35</InstdAmt>
+       </Amt>
+       <CdtrAgt>
+          <FinInstnId>
+             <BIC>MENTIRASXXX</BIC>
+          </FinInstnId>
+       </CdtrAgt>
+       <Cdtr>
+          <Nm>COARVAL, COOP.V.</Nm>
+           <Id>
+               <OrgId>
+                  <Othr>
+                     <Id>F46160875</Id>
+                  </Othr>
+               </OrgId>
+           </Id>
+        </Cdtr>
+        <CdtrAcct>
+           <Id>
+              <IBAN>ES8600010002090000000004</IBAN>
+           </Id>
+        </CdtrAcct>
+      <Purp>
+         <Cd>SALA</Cd>
+      </Purp>
+      <RmtInf>
+         <Ustrd>Factura num.  FR15008330-02/12/2015 Vto a fecha  02/12/2015</Ustrd>
       </RmtInf>
    </CdtTrfTxInf>
    </PmtInf>
